@@ -1,10 +1,13 @@
 package main
 
-import "fmt"
+import (
+	"github.com/gofiber/fiber/v2"
+)
 
-func main(){
-	fmt.Print("Hello World!")
-	fmt.Print("testing repo updation ")
-	fmt.Print("another test ")
-	
+
+func main() {
+	app := fiber.New()
+
+	app.Static("/", "./")
+		app.Listen(":3000")
 }
